@@ -22,6 +22,11 @@ public class RemoveDuplicatesFromSortedArray {
             }
         }
 
+        // 打印去重后的
+//        int[] newArray = new int[i+1];
+//        System.arraycopy(nums, 0, newArray, 0, i+1);
+//        System.out.println("去重后的数组元素：" + Arrays.toString(newArray));
+
         return i+1;
     }
 
