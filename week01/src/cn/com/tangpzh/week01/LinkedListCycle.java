@@ -38,14 +38,14 @@ public class LinkedListCycle {
     }
 
 
-    public static boolean method2(ListNode node){
-        if(node == null || node.next == null){
+    public static boolean method2(ListNode head){
+        if(head == null || head.next == null){
             return false;
         }
         // 慢指针
-        ListNode slow = node;
+        ListNode slow = head;
         // 快指针
-        ListNode fast = node.next;
+        ListNode fast = head.next;
         // 快、慢指针没有相遇，就一直循环
         while(slow != fast){
             // 快指针已经走完一遍了，但是还没有和慢指针相遇，就文明没有环
