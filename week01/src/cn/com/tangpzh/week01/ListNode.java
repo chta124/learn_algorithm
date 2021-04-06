@@ -1,5 +1,8 @@
 package cn.com.tangpzh.week01;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class ListNode {
 
     public int val;
@@ -39,9 +42,15 @@ public class ListNode {
     public String toString() {
         String ss = "";
         ListNode temp = this;
+        Set<ListNode> nodeSet = new HashSet<ListNode>();
         while (temp != null) {
             ss += temp.val + (temp.next != null ? "-->" : "-->null");
             temp = temp.next;
+            if(nodeSet.contains(temp)){
+               break;
+            }else{
+                nodeSet.add(temp);
+            }
         }
 
         return ss;
