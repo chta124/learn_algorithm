@@ -57,18 +57,22 @@ public class SlidingWindowMaximum_239 {
         }
         int len = nums.length;
         int[] result = new int[nums.length - k + 1];
-
+        // 使用双端队列
         LinkedList<Integer> queue = new LinkedList<Integer>();
         for (int i = 0; i < len; i++) {
+            // 如果队列不为空，则判断队尾元素是否少于nums[i]，如果少于，则需要执行出队操作----这样队列里只保留了比nums[i]大的元素
             while(!queue.isEmpty() && nums[queue.peekLast()] < nums[i]){
                 queue.removeLast();
             }
+            // 入到队列尾部
             queue.addLast(i);
 
+            // 判断队列头部元素是否有效（有效的定义就是：队列中的元素个数不能超过k个，超过了就要移除头部元素，保证队列中最多只有 k 个元素）
             if(queue.peekFirst() < i-k+1){
                 queue.removeFirst();
             }
 
+            // 判断遍历到的下标，是否满足滑动窗口的元素个数（例如 k=3时，遍历下标 0 1 时，滑动窗口中的元素个数是不够3个的，只有遍历到下标2后，滑动窗口中的元素才够3个）
             if(i+1 >= k){
                 result[i+1-k] = nums[queue.peek()];
             }
