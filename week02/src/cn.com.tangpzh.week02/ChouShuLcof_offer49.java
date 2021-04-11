@@ -24,8 +24,8 @@ public class ChouShuLcof_offer49 {
 
     public static void main(String[] args) {
         ChouShuLcof_offer49 test = new ChouShuLcof_offer49();
-        System.out.println(test.method1(1407));
-        System.out.println(test.method2(1407));
+        System.out.println(test.method1(1402));
+        System.out.println(test.method2(1402));
     }
 
     /**
@@ -41,7 +41,8 @@ public class ChouShuLcof_offer49 {
         // 利用hash来去重
         Set<Long> visited = new HashSet<Long>();
         // 使用小根堆来实现
-        PriorityQueue<Long> minHeap = new PriorityQueue<Long>();
+        PriorityQueue<Long> minHeap = new PriorityQueue<Long>((o1, o2) -> o1>o2?1:-1);
+//        PriorityQueue<Long> minHeap = new PriorityQueue<Long>();
         // 最小的丑数是1
         minHeap.offer(1L);
         visited.add(1L);
