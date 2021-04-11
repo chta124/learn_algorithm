@@ -26,8 +26,8 @@ import java.util.Stack;
 public class LargestRectangleInHistogram_84 {
 
     public static void main(String[] args) {
-//        int[] heights = new int[]{2, 1, 5, 6, 2, 3};
-        int[] heights = new int[]{1, 1};
+        int[] heights = new int[]{2, 1, 5, 6, 2, 3};
+//        int[] heights = new int[]{1, 1};
         System.out.println(LargestRectangleInHistogram_84.method1(heights));
         System.out.println(LargestRectangleInHistogram_84.method2(heights));
     }
