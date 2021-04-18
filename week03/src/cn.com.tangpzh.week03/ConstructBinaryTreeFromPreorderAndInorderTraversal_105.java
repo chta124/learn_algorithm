@@ -5,7 +5,11 @@ import java.util.Arrays;
 public class ConstructBinaryTreeFromPreorderAndInorderTraversal_105 {
 
     public static void main(String[] args) {
-
+        int[] preorder = new int[]{3,9,20,15,7};
+        int[] inorder = new int[]{9,3,15,20,7};
+        ConstructBinaryTreeFromPreorderAndInorderTraversal_105 test = new ConstructBinaryTreeFromPreorderAndInorderTraversal_105();
+        TreeNode node = test.method1(preorder, inorder);
+        System.out.println(node);
     }
 
     // 暴力递归
