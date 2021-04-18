@@ -6,9 +6,9 @@ public class LowestCommonAncestorOfBinaryTree_236 {
 
         TreeNode root = TreeNode.initTreeNode(new Integer[]{3, 5, 1, 6, 2, 0, 8, null, null, 7, 4});
         LowestCommonAncestorOfBinaryTree_236 test = new LowestCommonAncestorOfBinaryTree_236();
-        TreeNode targetNode1 = test.method1(root, new TreeNode(5), new TreeNode(1));
+        TreeNode targetNode1 = test.method1(root, new TreeNode(5), new TreeNode(6));
         System.out.println(targetNode1);
-        TreeNode targetNode2 = test.method2(root, new TreeNode(5), new TreeNode(1));
+        TreeNode targetNode2 = test.method2(root, new TreeNode(5), new TreeNode(6));
         System.out.println(targetNode2);
     }
 
@@ -40,11 +40,18 @@ public class LowestCommonAncestorOfBinaryTree_236 {
     }
 
     public TreeNode method2(TreeNode root, TreeNode p, TreeNode q) {
+        System.out.println("root -> " + (root == null ? "null" : root.val));
         if (root == null || root.val == p.val || root.val == q.val){
+            System.out.println("结束---" + (root == null ? "null" : root.val));
             return root;
         }
+        // 从左子树中去搜索
         TreeNode left = method2(root.left, p, q);
+        System.out.println("left -> " + (left == null ? "null" : left.val));
         TreeNode right = method2(root.right, p, q);
+        System.out.println("right -> " + (right == null ? "null" : right.val));
+
+        //
         if (left != null && right != null){
             return root;
         }
