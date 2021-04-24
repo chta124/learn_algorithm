@@ -38,6 +38,7 @@ public class BestTimeToBuyAndSellStockii_122 {
         int totalProfit = 0;
         for(int i = 0;i<prices.length-1;i++){
             if(prices[i+1] > prices[i]){
+                // 只是前后两天的价格上涨了，上涨的差价就是收益
                 totalProfit += (prices[i+1] - prices[i]);
             }
         }
